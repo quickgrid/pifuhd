@@ -2,6 +2,7 @@
 
 import sys
 import os
+import gc
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 ROOT_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -185,6 +186,8 @@ def recon(opt, use_rect=False):
     
     del state_dict
     del opt_netG
+    gc.collect()
+    torch.cuda.empty_cache()
 
     os.makedirs(opt.checkpoints_path, exist_ok=True)
     os.makedirs(opt.results_path, exist_ok=True)

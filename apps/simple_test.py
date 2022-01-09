@@ -12,8 +12,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-i', '--input_path', type=str, default='./sample_images')
 parser.add_argument('-o', '--out_path', type=str, default='./results')
 parser.add_argument('-c', '--ckpt_path', type=str, default='./checkpoints/pifuhd.pt')
-parser.add_argument('-r', '--resolution', type=int, default=300)
-parser.add_argument('--use_rect', action='store_false', help='use rectangle for cropping')
+parser.add_argument('-r', '--resolution', type=int, default=400)
+parser.add_argument('--use_rect', action='store_true', help='use rectangle for cropping')
 args = parser.parse_args()
 ###############################################################################################
 ##                   Upper PIFu
